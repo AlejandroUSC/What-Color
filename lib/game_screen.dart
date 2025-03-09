@@ -72,7 +72,7 @@ class GameScreenState extends State<GameScreen> {
           remainingTime--;
         });
         if (remainingTime <= 3) {
-          // FUTURE TO DO - Add some beeping noise
+          // TODO - Add some beeping noise
           print("Beeepppppp!!!");
         }
       }
@@ -83,9 +83,9 @@ class GameScreenState extends State<GameScreen> {
     if (index == differentSquareIndex) {
       setState(() {
         score++;
-        if(score % 4 == 0){ // After 20 make the colors less differentiable every 4
+        if(score % 6 == 0){ // After 20 make the colors less differentiable every 6
           gridSize = (gridSize + 1).clamp(2, 8);
-          timerDuration = (timerDuration - 1).clamp(3, 10);
+          timerDuration = (timerDuration - 1).clamp(2, 10);
           colorDifferential = (colorDifferential - 2).clamp(6, 34);
         }
         initializeGame();
